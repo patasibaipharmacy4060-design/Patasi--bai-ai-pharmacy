@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.fda.gov https://rxnav.nlm.nih.gov https://eutils.ncbi.nlm.nih.gov https://clinicaltrials.gov; style-src 'self'; script-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'self'">
+  <title>Patasi Bai AI Pharmacy — Safety Scanner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">PATASI BAI AI PHARMACY</p>
+        <h1>Safety Scanner</h1>
+        <p class="subhead">Evidence-first medicine lookup for pharmacist review.</p>
+      </div>
+      <div class="trust-mark" aria-label="Evidence-first product">PB<span>+</span></div>
+    </header>
+
+    <section class="notice" role="note">
+      <strong>Safety boundary:</strong> public medicine databases can corroborate a medicine identity and label information. They do not prove that a physical batch is genuine. Every result requires pharmacist review before escalation.
+    </section>
+
+    <section class="panel">
+      <form id="scan-form" novalidate>
+        <div class="field-grid">
+          <label>Medicine name <span aria-hidden="true">*</span>
+            <input id="medicine" name="medicine" autocomplete="off" required placeholder="e.g. aspirin">
+          </label>
+          <label>Batch number <span aria-hidden="true">*</span>
+            <input id="batch" name="batch" autocomplete="off" required placeholder="e.g. BATCH-2026-001">
+          </label>
+        </div>
+        <div class="actions">
+          <button id="scan-button" type="submit">Run evidence check <span aria-hidden="true">→</span></button>
+          <span class="microcopy">No account. No API keys. No medical advice.</span>
+        </div>
+      </form>
+    </section>
+
+    <section id="result" class="result-panel" aria-live="polite" hidden></section>
+
+    <section class="panel audit-panel">
+      <div class="section-heading"><div><p class="eyebrow">TRACEABILITY</p><h2>Audit trail</h2></div><button id="clear-audit" class="text-button" type="button">Clear local records</button></div>
+      <p class="muted">Records stay in this browser only in this free prototype. Do not enter patient information.</p>
+      <ol id="audit-list" class="audit-list"><li class="empty">No scans recorded yet.</li></ol>
+    </section>
+
+    <footer><span>Prototype for pharmacist workflow design.</span><span>Founder: Ramesh Ogadram</span></footer>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
