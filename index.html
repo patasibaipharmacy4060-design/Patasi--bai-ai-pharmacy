@@ -25,10 +25,10 @@
     <section class="panel">
       <form id="scan-form" novalidate>
         <div class="field-grid">
-          <label>Medicine name <span aria-hidden="true">*</span>
+          <label for="medicine">Medicine name <span aria-hidden="true">*</span>
             <input id="medicine" name="medicine" autocomplete="off" required placeholder="e.g. aspirin">
           </label>
-          <label>Batch number <span aria-hidden="true">*</span>
+          <label for="batch">Batch number <span aria-hidden="true">*</span>
             <input id="batch" name="batch" autocomplete="off" required placeholder="e.g. BATCH-2026-001">
           </label>
         </div>
@@ -39,12 +39,12 @@
       </form>
     </section>
 
-    <section id="result" class="result-panel" aria-live="polite" hidden></section>
+    <section id="result" class="result-panel" aria-live="polite" aria-atomic="true" hidden></section>
 
     <section class="panel audit-panel">
-      <div class="section-heading"><div><p class="eyebrow">TRACEABILITY</p><h2>Audit trail</h2></div><button id="clear-audit" class="text-button" type="button">Clear local records</button></div>
+      <div class="section-heading"><div><p class="eyebrow">TRACEABILITY</p><h2>Audit trail</h2></div><button id="clear-audit" class="text-button" type="button" aria-label="Clear all local audit records">Clear local records</button></div>
       <p class="muted">Records stay in this browser only in this free prototype. Do not enter patient information.</p>
-      <ol id="audit-list" class="audit-list"><li class="empty">No scans recorded yet.</li></ol>
+      <ol id="audit-list" class="audit-list" aria-live="polite"><li class="empty">No scans recorded yet.</li></ol>
     </section>
 
     <footer><span>Prototype for pharmacist workflow design.</span><span>Founder: Ramesh Ogadram</span></footer>
